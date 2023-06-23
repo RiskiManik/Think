@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      button {
+        padding: 10px 18px;
+        border: none;
+        outline: 1px solid #0a0a0a;
+        cursor: pointer;
+      }
+      .pindah {
+        transform: translate(100px, 100px);
+      }
+    </style>
+  </head>
+  <body>
+    <p id="teks">ini teks</p>
+    <button onclick="ubahText()">ubah text</button>
+    <button onclick="ubahBg()">ubah Background</button>
+    <button id="btn" onmouseover="pindahBtn()">Click Me</button>
+    <script>
+      const teks = document.getElementById("teks");
+      const btn = document.getElementById("btn");
+      let count = 0;
+      function ubahText() {
+        teks.innerHTML = "teks nya sudah berubah ";
+      }
+      function ubahBg() {
+        teks.style.backgroundColor = "#eebbc3";
+        teks.style.fontSize = "2rem";
+      }
+      function pindahBtn() {
+        count++;
+        btn.classList.toggle("pindah");
+        if (count == 1) {
+          btn.textContent = "😂";
+        } else if (count == 2) {
+          btn.textContent = "😋";
+        } else if (count == 3) {
+          btn.textContent = "gwe yg oalah 😹";
+        } else {
+          count = 0;
+        }
+      }
+    </script>
+  </body>
+</html>
